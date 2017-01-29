@@ -1,6 +1,6 @@
 {
   "name": "teserver",
-  "description": "Server for extracting text from doc/docx/xls/jpg...",
+  "description": "A simple Docker server for extracting text from pdf, doc, docx, xls, xlsx, csv, pptx, png, jpg, gif, rtf...",
   "preferGlobal": true,
   "version": "0.0.3",
   "engines": {
