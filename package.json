@@ -1,0 +1,57 @@
+{
+  "name": "teserver",
+  "description": "Server for extracting text from doc/docx/xls/jpg...",
+  "preferGlobal": true,
+  "version": "0.0.3",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "files": [
+    "package.json",
+    "index.js",
+    "server/"
+  ],
+   "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "extraction",
+    "text extraction",
+    "doc",
+    "docx",
+    "pdf",
+    "png",
+    "jpg"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests --recursive --watch",
+    "start": "node index.js"
+  },
+  "author": {
+    "name": "Youssef El",
+    "email": "youssef@comepic.com",
+    "url": "http://comepic.com"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.7.20",
+    "compression": "^1.6.2",
+    "cors": "^2.8.1",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "lodash": "^4.14.0",
+    "mime-types": "^2.1.13",
+    "morgan": "^1.7.0",
+    "multer": "^1.2.1",
+    "multer-s3": "^2.5.0",
+    "response-time": "^2.3.1",
+    "textract": "^2.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^3",
+    "should": "^11",
+    "better-assert": "^1.0.0"
+  },
+  "license": "MIT"
+}
