@@ -1,4 +1,4 @@
-teserver is Painless Docker server for extracting text from pdf, doc, docx, xls, xlsx, csv, pptx, png, jpg, gif, rtf...
+teserver is a Painless Docker server for extracting text from pdf, doc, docx, xls, xlsx, csv, pptx, png, jpg, gif, rtf...
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ REGION=
 MAX_FILE_SIZE=20
 ```
 
-Then, let's build and start our Docker server
+Then, let's build up and start our Docker server
 
 ```docker
 docker build -t teserver .
