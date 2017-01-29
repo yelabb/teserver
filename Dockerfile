@@ -1,12 +1,7 @@
-#usage
-#----------------------------------------
-#docker build -t text_exctractor_server .  (don't forget the dot)
-#docker run -it -p 8080:8080 text_exctractor_server
-
 FROM ubuntu:14.04
 ENV DEBIAN_FRONTEND noninteractive
-MAINTAINER baymout@gmail.com
-LABEL NAME="text_exctractor_server"
+MAINTAINER youssef@comepic.com
+LABEL NAME="teserver"
 
 # Update your distribution and install curl
 RUN apt-get update && apt-get upgrade -qqy
