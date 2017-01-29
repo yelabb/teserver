@@ -13,8 +13,9 @@ AWS_ACCESS_KEY_ID: Amazon Web Service access key
 AWS_SECRET_ACCESS_KEY: AWS secret key
 S3_BUCKET: AWS bucket name
 REGION: Bucket AWS region name
-MAX_FILE_SIZE: Maximum file size allowed in Mb
-PORT: Your server port
+ACL: Access Control List, default public-read
+MAX_FILE_SIZE: Maximum file size allowed in Mb, default: 20Mb
+PORT: Your server port, default: 8080
 ```
 or edit the .env file in the root directory of this module.
 
