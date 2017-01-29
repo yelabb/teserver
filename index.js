@@ -4,12 +4,12 @@
 require('dotenv').config();
 
 //Loading dependencies
-const express       = require('express');
-const compression   = require('compression');
-const responseTime  = require('response-time');
-const morgan        = require('morgan');
-const extractor    = require('./lib');
-const cors 			= require('cors');
+const express = require('express');
+const compression = require('compression');
+const responseTime = require('response-time');
+const morgan = require('morgan');
+const extractor = require('./lib');
+const cors = require('cors');
 
 /*Express Setup*/
 let app = express();
