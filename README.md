@@ -1,32 +1,42 @@
-teserver is a Painless Docker server for extracting text from pdf, doc, docx, xls, xlsx, csv, pptx, png, jpg, gif, rtf...
+teserver is a Painless Docker :sparkles:  Nodejs :sparkles:S3 server for extracting text from pdf, doc, docx, xls, xlsx, csv, pptx, png, jpg, gif, rtf...
 
 ## Getting Started
 
 Install teserver using `npm`:
 
 ```
-npm install --save teserver
+npm install teserver
 ```
-
-Let's edit the .env file in the root directory of the module to set up the Amazon S3 credentials (Where we will store the uploaded files) and the maximum file size (in Mb).
-
+Add these environment variables
 ```javascript
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-S3_BUCKET=
-REGION=
-MAX_FILE_SIZE=20
+AWS_ACCESS_KEY_ID: Amazon Web Service access key
+AWS_SECRET_ACCESS_KEY: AWS secret key
+S3_BUCKET: AWS bucket name
+REGION: Bucket AWS region name
+MAX_FILE_SIZE: Maximum file size allowed in Mb
+PORT: Your server port
 ```
+or edit the .env file in the root directory of this module.
+
 
 Then, let's build up and start our Docker server
 
-```docker
+```Docker
 docker build -t teserver .
 docker run -it -p 8080:8080 teserver
 ```
 
-We are done! just send your http Post request to http://Your_docker_machine_ip:8080/upload
-###Response
+We can also run it directly
+```js
+npm start
+```
+
+We are done! just send your http POST request with a file key to 
+
+> http://**machine_ip**:8080/**upload**
+
+
+You should have this kind of response
 
 ```js
 {
@@ -50,7 +60,29 @@ We are done! just send your http Post request to http://Your_docker_machine_ip:8
   "text": "The text"
 }
 ```
-
+If things go wrong, you'll have to deal with this type of response
+```js
+{
+  "status": "error",
+  "file": {
+    "fieldname": "file",
+    "originalname": "Chomsky, 2003.pdf",
+    "encoding": "7bit",
+    "mimetype": "application/pdf",
+    "size": 92522,
+    "bucket": "textanalyseruploads",
+    "key": "dc1b37a13512fc6f4asda33fa4a02dfda5b01485720269830.pdf",
+    "acl": "public-read",
+    "contentType": "application/octet-stream",
+    "contentDisposition": null,
+    "storageClass": "STANDARD",
+    "metadata": {},
+    "location": "https://URL_S3/f433fa4a02dfda5b01485720269830.pdf",
+    "etag": "\"b8d0a7de12543dde068cc2b5ccd32f68\""
+  },
+  "error": "the error"
+}
+```
 
 ### MIT License
 
