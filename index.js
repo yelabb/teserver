@@ -1,6 +1,6 @@
 'use strict';
 
-//Load .env and exposes them to process.env...
+//Load .env and exposes them as process.env...
 require('dotenv').config();
 
 //Loading dependencies
@@ -33,4 +33,4 @@ console.log("[API VERSION] ", process.env.VERSION)
 console.log("[CODE ENVIRONMENT] ", process.env.NODE_ENV) 
 
 /*App is Listening*/
-app.listen(port, ()=> console.log('[Listening on port] ', port));
+app.listen(port, ()=> console.log('[PORT] ', port));
