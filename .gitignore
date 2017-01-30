@@ -53,5 +53,4 @@ todo
 notes
 test.*
 *.pdf
-
-localDb
+*.env
