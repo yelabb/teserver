@@ -17,7 +17,7 @@ let docx_file = {};
 docx_file.location = "https://s3.amazonaws.com/github-tests/teserver/test.docx";
 
 /*
-* Test the /GET route
+* Test /lib/textExtractor.js
 */
 describe('Documents to raw text', () => {
     it('it should read a text file', (done) => {
