@@ -34,3 +34,5 @@ console.log("[CODE ENVIRONMENT] ", process.env.NODE_ENV)
 
 /*App is Listening*/
 app.listen(port, ()=> console.log('[PORT] ', port));
+
+module.exports = app;
