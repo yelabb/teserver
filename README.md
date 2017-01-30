@@ -1,24 +1,29 @@
-teserver is a Painless Docker :sparkles:  Nodejs :sparkles:S3 server for extracting text from pdf, doc, docx, xls, xlsx, csv, pptx, png, jpg, gif, rtf...
+**teserver** is a Painless Nodejs (*Docker and S3 ready)* server for extracting text from pdf, doc, docx, xls, xlsx, csv, pptx, png, jpg, gif, rtf...
 
 ## Getting Started
 
-Install teserver using `npm`:
+Install **teserver** using `npm`:
 
 ```
 npm install teserver
 ```
 Add these environment variables
+
+*S3 storage*
 ```javascript
 AWS_ACCESS_KEY_ID: Amazon Web Service access key
 AWS_SECRET_ACCESS_KEY: AWS secret key
 S3_BUCKET: AWS bucket name
 REGION: Bucket AWS region name
 ACL: Access Control List, default public-read
-MAX_FILE_SIZE: Maximum file size allowed in Mb, default: 20Mb
-PORT: Your server port, default: 8080
 ```
-or edit the .env file in the root directory of this module.
 
+*Set the server port and max file size (optional)*
+```javascript
+MAX_FILE_SIZE: Maximum file size allowed in Mb, default: 20
+PORT: Your server port, default: 8080
+UPLOAD_DIR: default: 'uploads'
+```
 
 Then, let's build up and start our Docker server
 
@@ -27,8 +32,13 @@ docker build -t teserver .
 docker run -it -p 8080:8080 teserver
 ```
 
-We can also run it directly
+We can also run it without Docker, but we'll need to to install some dependencies first
 ```js
+sudo apt-get install xpdf
+sudo apt-get install antiword
+sudo apt-get install unrtf
+sudo apt-get install tesseract-ocr
+
 npm start
 ```
 
