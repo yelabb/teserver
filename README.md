@@ -1,3 +1,5 @@
+### THIS PROJECT IS NOT MAINTAINED
+
 **teserver** is a Painless Nodejs (*Docker and S3 ready)* server for extracting text from pdf, doc, docx, xls, xlsx, csv, pptx, png, jpg, gif, rtf...
 
 ## Getting Started
